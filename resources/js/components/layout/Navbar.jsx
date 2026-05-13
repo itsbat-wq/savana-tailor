@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
@@ -44,7 +43,6 @@ export default function Navbar() {
                     />
                 </Link>
 
-                {/* Desktop Navigation */}
                 <nav className="navbar__nav">
                     {navLinks.map((link) => (
                         <Link
@@ -53,18 +51,10 @@ export default function Navbar() {
                             className={`navbar__link ${location.pathname === link.path ? 'navbar__link--active' : ''}`}
                         >
                             {link.label}
-                            {location.pathname === link.path && (
-                                <motion.span
-                                    className="navbar__link-underline"
-                                    layoutId="navbar-underline"
-                                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                                />
-                            )}
                         </Link>
                     ))}
                 </nav>
 
-                {/* Mobile Toggle */}
                 <button
                     className="navbar__toggle"
                     onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -74,34 +64,19 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Navigation */}
-            <AnimatePresence>
-                {isMobileOpen && (
-                    <motion.nav
-                        className="navbar__mobile"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        {navLinks.map((link, index) => (
-                            <motion.div
-                                key={link.path}
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.05 }}
-                            >
-                                <Link
-                                    to={link.path}
-                                    className={`navbar__mobile-link ${location.pathname === link.path ? 'navbar__mobile-link--active' : ''}`}
-                                >
-                                    {link.label}
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </motion.nav>
-                )}
-            </AnimatePresence>
+            {isMobileOpen && (
+                <nav className="navbar__mobile">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.path}
+                            to={link.path}
+                            className={`navbar__mobile-link ${location.pathname === link.path ? 'navbar__mobile-link--active' : ''}`}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
+            )}
         </header>
     );
 }
