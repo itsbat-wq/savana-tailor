@@ -1,0 +1,66 @@
+.usp {
+    background-color: var(--color-cream);
+}
+
+.usp__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 640px) {
+    .usp__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .usp__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.usp__card {
+    text-align: center;
+    padding: 40px 24px;
+    background: var(--color-white);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.usp__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(107, 13, 26, 0.08);
+    border-color: var(--color-gold);
+}
+
+.usp__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.usp__card:hover .usp__icon {
+    background-color: var(--color-gold);
+    color: var(--color-white);
+}
+
+.usp__title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-black);
+}
+
+.usp__desc {
+    font-size: 0.85rem;
+    color: rgba(17, 17, 17, 0.6);
+    line-height: 1.6;
+}

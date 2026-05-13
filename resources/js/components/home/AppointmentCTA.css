@@ -1,0 +1,82 @@
+.cta {
+    background-color: var(--color-white);
+}
+
+.cta__card {
+    background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%);
+    padding: 60px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .cta__card {
+        padding: 80px 60px;
+    }
+}
+
+.cta__card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.cta__content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 1px solid var(--color-gold);
+    border-radius: 50%;
+    color: var(--color-gold);
+    margin-bottom: 24px;
+}
+
+.cta__title {
+    color: var(--color-white);
+    margin-bottom: 16px;
+}
+
+.cta__desc {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.cta__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (min-width: 640px) {
+    .cta__actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.cta__actions .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-maroon);
+    border-color: var(--color-white);
+}
+
+.cta__actions .btn-primary:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    border-color: var(--color-gold);
+}

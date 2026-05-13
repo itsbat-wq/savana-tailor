@@ -1,0 +1,245 @@
+/* ===== CSS Variables (Brand Colors) ===== */
+:root {
+    --color-maroon: #6B0D1A;
+    --color-maroon-light: #8B1A2B;
+    --color-maroon-dark: #4A0912;
+    --color-gold: #D4AF37;
+    --color-gold-light: #E5C76B;
+    --color-gold-dark: #B8960F;
+    --color-black: #111111;
+    --color-cream: #F7F4EF;
+    --color-cream-dark: #EDE8E0;
+    --color-white: #FFFFFF;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s var(--transition-smooth);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* ===== Utility Classes ===== */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 60px;
+    }
+}
+
+.section {
+    padding: 80px 0;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 120px 0;
+    }
+}
+
+/* ===== Typography ===== */
+.heading-xl {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    letter-spacing: -0.02em;
+}
+
+.heading-lg {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: -0.01em;
+}
+
+.heading-md {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.heading-sm {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.text-body {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.text-small {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.text-gold {
+    color: var(--color-gold);
+}
+
+.text-maroon {
+    color: var(--color-maroon);
+}
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--color-maroon);
+    color: var(--color-white);
+    border: 2px solid var(--color-maroon);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-maroon-dark);
+    border-color: var(--color-maroon-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(107, 13, 26, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.btn-white {
+    background-color: var(--color-white);
+    color: var(--color-maroon);
+    border: 2px solid var(--color-white);
+}
+
+.btn-white:hover {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+/* ===== Gold Divider ===== */
+.gold-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+    margin: 16px 0;
+}
+
+.gold-divider-center {
+    margin: 16px auto;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-maroon);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-maroon-dark);
+}
+
+/* ===== Selection ===== */
+::selection {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+/* ===== Page Hero ===== */
+.page-hero {
+    padding: 160px 0 80px;
+    text-align: center;
+}
+
+.page-hero--maroon {
+    background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%);
+}
+
+.page-hero--black {
+    background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
+}
+
+.page-hero--gold {
+    background: linear-gradient(135deg, #2a2010 0%, #1a1508 100%);
+}

@@ -1,0 +1,36 @@
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-black);
+    z-index: 9999;
+}
+
+.loading-screen__content {
+    text-align: center;
+}
+
+.loading-screen__logo {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-gold);
+    letter-spacing: 0.02em;
+}
+
+.loading-screen__line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+    margin: 12px auto;
+    transform-origin: center;
+}
+
+.loading-screen__tagline {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-white);
+}

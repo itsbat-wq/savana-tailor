@@ -1,0 +1,119 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+}
+
+.navbar--scrolled {
+    background-color: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: height 0.3s ease;
+}
+
+.navbar--scrolled .navbar__logo-img {
+    height: 40px;
+}
+
+.navbar__nav {
+    display: none;
+    align-items: center;
+    gap: 28px;
+}
+
+@media (min-width: 1024px) {
+    .navbar__nav {
+        display: flex;
+    }
+}
+
+.navbar__link {
+    position: relative;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+    color: var(--color-gold);
+}
+
+.navbar__link--active {
+    color: var(--color-gold);
+}
+
+.navbar__link-underline {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-gold);
+    border-radius: 1px;
+}
+
+.navbar__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: var(--color-white);
+    padding: 8px;
+}
+
+@media (min-width: 1024px) {
+    .navbar__toggle {
+        display: none;
+    }
+}
+
+.navbar__mobile {
+    background-color: rgba(17, 17, 17, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 20px 24px;
+    overflow: hidden;
+}
+
+.navbar__mobile-link {
+    display: block;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease;
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link--active {
+    color: var(--color-gold);
+}
