@@ -1,58 +1,129 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Savana Taylor Boutique - Headless Web Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Proyek ini adalah sebuah aplikasi web e-commerce *headless* yang dirancang khusus untuk Savana Taylor Boutique. Dibangun menggunakan arsitektur modern di mana backend dan frontend berjalan secara terpisah namun terintegrasi via API.
 
-## About Laravel
+## 🛠️ Teknologi yang Digunakan
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+*   **Frontend:** Next.js 16 (App Router), React, Tailwind CSS, Framer Motion, Zustand, React Query.
+*   **Backend:** Laravel 11/13, PHP 8.3+, MySQL/MariaDB, Laravel Sanctum (Token-based Auth).
+*   **Arsitektur:** Monorepo (Frontend Next.js berada di dalam folder `frontend/` dari repositori Laravel utama).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📋 Persyaratan Sistem (Prerequisites)
 
-## Learning Laravel
+Sebelum mulai menjalankan proyek ini, pastikan sistem Anda sudah terinstal perangkat lunak berikut:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+*   **PHP:** Versi 8.2 atau 8.3 (Sangat direkomendasikan PHP 8.3).
+*   **Node.js:** Versi 18.x atau yang lebih baru.
+*   **Composer:** Manajer dependensi untuk PHP.
+*   **MySQL / MariaDB:** Database server (contoh: bisa menggunakan Laragon/XAMPP).
+*   **Git:** Untuk version control.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 🚀 Cara Menjalankan Proyek di Lingkungan Lokal (Development)
 
-## Agentic Development
+Proyek ini terdiri dari dua bagian (Backend dan Frontend) yang harus dijalankan secara bersamaan. Ikuti langkah-langkah berikut secara berurutan.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Tahap 1: Setup Backend (Laravel API)
 
-```bash
-composer require laravel/boost --dev
+1.  Buka terminal/command prompt dan arahkan ke direktori root proyek (`savana-tailor`).
+2.  Instal dependensi PHP menggunakan Composer:
+    ```bash
+    composer install
+    ```
+3.  Salin file konfigurasi environment:
+    ```bash
+    cp .env.example .env
+    ```
+4.  Buka file `.env` dan atur koneksi database Anda:
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=savana
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
+5.  Generate *Application Key* Laravel:
+    ```bash
+    php artisan key:generate
+    ```
+6.  Jalankan migrasi database dan *seeding* (membuat tabel dan mengisi data awal/dummy):
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
+7.  Jalankan server backend Laravel (secara default berjalan di port 8000):
+    ```bash
+    php artisan serve
+    ```
+    *(Biarkan terminal ini tetap terbuka).*
 
-php artisan boost:install
+---
+
+### Tahap 2: Setup Frontend (Next.js)
+
+1.  Buka tab/jendela terminal **baru** (jangan tutup terminal Laravel).
+2.  Arahkan ke folder frontend:
+    ```bash
+    cd frontend
+    ```
+3.  Instal dependensi Node.js menggunakan NPM:
+    ```bash
+    npm install
+    ```
+4.  Pastikan ada file `.env.local` di dalam folder `frontend/` dengan isi:
+    ```env
+    NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api
+    NEXT_PUBLIC_STORAGE_URL=http://127.0.0.1:8000
+    ```
+5.  Jalankan server pengembangan Next.js (berjalan di port 3000): **pastikan cd frontend dahulu**
+    ```bash
+    npm run dev
+    ```
+    *(Biarkan terminal ini tetap terbuka).*
+
+---
+
+## 💻 Cara Mengakses Aplikasi
+
+Setelah kedua server di atas berjalan, Anda dapat mengakses proyek melalui browser:
+
+*   **Website Publik (Frontend):** `http://localhost:3000`
+*   **Admin Panel (Frontend):** `http://localhost:3000/admin/login`
+*   **Backend API Endpoint:** `http://127.0.0.1:8000/api`
+
+# Danger!!!!
+bawah yg d comment 
+<!-- ### Kredensial Admin Default
+Karena Anda telah menjalankan `php artisan migrate --seed`, akun admin berikut telah otomatis dibuat:
+
+*   **Email:** `admin@savanataylor.com`
+*   **Password:** `savana2026` -->
+
+---
+
+## 📁 Struktur Direktori Utama
+
+```text
+savana-tailor/
+│
+├── app/                  # Logika aplikasi Laravel (Models, Controllers)
+├── routes/
+│   └── api.php           # Semua endpoint API untuk Next.js terdaftar di sini
+├── database/
+│   ├── migrations/       # Skema database
+│   └── seeders/          # Data dummy (Kategori, Produk, Admin, Pengaturan)
+│
+├── frontend/             # ⬅️ FOLDER NEXT.JS (FRONTEND)
+│   ├── src/
+│   │   ├── app/          # Halaman dan Routing Next.js (App Router)
+│   │   ├── components/   # Komponen UI React (Navbar, ProductCard, AdminShell, dll)
+│   │   ├── lib/          # Konfigurasi Axios API (api.js)
+│   │   └── stores/       # State Management (Zustand authStore)
+│   ├── public/           # Aset statis (Foto Produk, Logo)
+│   └── package.json      # Dependensi Next.js
+│
+└── .env                  # Konfigurasi Backend Laravel
 ```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

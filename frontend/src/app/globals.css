@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --maroon: #6B0F1A;
+  --maroon-dark: #4a0b12;
+  --maroon-light: #8B1A26;
+  --gold: #C9A84C;
+  --gold-light: #E2C27A;
+  --gold-pale: #F5EDD6;
+  --cream: #FAF7F2;
+  --off-white: #F2EDE8;
+  --black: #0D0D0D;
+  --charcoal: #1A1A1A;
+  --gray-dark: #2C2C2C;
+  --gray-mid: #6B6B6B;
+  --gray-light: #BDBDBD;
+  --white: #FFFFFF;
+
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+
+  --nav-h: 80px;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────── */
+.display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+.heading-xl {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+.heading-lg {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+.heading-md {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+.label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.body-lg { font-size: 1.05rem; line-height: 1.75; font-weight: 300; }
+.body-sm { font-size: 0.8rem; line-height: 1.7; }
+
+/* ─── LAYOUT ─────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 768px) { .container { padding: 0 20px; } }
+
+/* ─── BUTTONS ────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.btn-dark {
+  background: var(--black);
+  color: var(--white);
+  padding: 18px 40px;
+}
+.btn-dark:hover { background: var(--maroon); }
+.btn-outline {
+  background: transparent;
+  color: var(--black);
+  padding: 16px 38px;
+  border: 1px solid var(--black);
+}
+.btn-outline:hover { background: var(--black); color: var(--white); }
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  padding: 16px 38px;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.btn-outline-white:hover { background: var(--white); color: var(--black); }
+.btn-gold {
+  background: var(--gold);
+  color: var(--black);
+  padding: 18px 40px;
+}
+.btn-gold:hover { background: var(--gold-light); }
+
+/* ─── DIVIDERS ───────────────────────────────────── */
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+}
+.gold-line-center { margin: 0 auto; }
+
+/* ─── SCROLLBAR ──────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ─── SKELETON ───────────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #e8e2d9 0%, #f5f0e8 50%, #e8e2d9 100%);
+  background-size: 600px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ─── SELECTION ──────────────────────────────────── */
+::selection { background: var(--gold); color: var(--black); }

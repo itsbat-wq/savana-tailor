@@ -1,0 +1,92 @@
+.page { padding-top: var(--nav-h); min-height: 100vh; background: var(--white); }
+
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .detail { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
+}
+
+/* Gallery */
+.gallery {}
+.mainImg {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--off-white);
+  overflow: hidden;
+}
+.mainPhoto { object-fit: cover; object-position: center top; }
+.imgPlaceholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #e8e2d9, #d4c9b8);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: rgba(107,15,26,0.3);
+  letter-spacing: 0.15em;
+}
+.thumbRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.thumb {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--off-white);
+  padding: 0;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+.thumbActive { border-color: var(--gold); }
+
+/* Info */
+.info { position: sticky; top: calc(var(--nav-h) + 24px); }
+.imgSkeleton { aspect-ratio: 3/4; width: 100%; }
+.infoSkeleton { display: flex; flex-direction: column; }
+
+.categoryTag { color: var(--gold); display: block; margin-bottom: 12px; }
+.productName { color: var(--black); margin-bottom: 16px; }
+.price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--maroon);
+  font-family: var(--font-heading);
+}
+.desc {
+  color: var(--gray-mid);
+  margin-bottom: 28px;
+}
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--gray-dark);
+}
+.featureDot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.waBtn { flex: 1; justify-content: center; }
+.waNote { font-size: 0.7rem; color: var(--gray-light); text-align: center; }

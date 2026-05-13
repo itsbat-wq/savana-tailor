@@ -1,0 +1,44 @@
+# =========================================================================
+# FILE: requirements.txt
+# PROYEK: Savana Tailor Boutique
+# =========================================================================
+# File ini merangkum seluruh perintah instalasi dependensi (Backend & Frontend)
+# yang dibutuhkan untuk menjalankan proyek ini.
+# =========================================================================
+
+# -------------------------------------------------------------------------
+# 1. KEBUTUHAN SISTEM (SYSTEM REQUIREMENTS)
+# -------------------------------------------------------------------------
+# Pastikan Anda sudah menginstal perangkat lunak berikut di PC/Laptop Anda:
+# - PHP >= 8.3       (Bisa didapat dari instalasi Laragon/XAMPP versi terbaru)
+# - Node.js >= 18.x  (Download di https://nodejs.org/)
+# - Composer         (Download di https://getcomposer.org/)
+# - MySQL / MariaDB  (Dari Laragon/XAMPP)
+
+# -------------------------------------------------------------------------
+# 2. INSTALASI DEPENDENSI BACKEND (LARAVEL)
+# -------------------------------------------------------------------------
+# Buka terminal di root folder (c:\web\savana-tailor\savana-tailor) lalu jalankan:
+composer install
+php artisan key:generate
+php artisan migrate:fresh --seed
+php artisan storage:link
+
+# -------------------------------------------------------------------------
+# 3. INSTALASI DEPENDENSI FRONTEND (NEXT.JS)
+# -------------------------------------------------------------------------
+# Buka terminal dan masuk ke folder frontend:
+cd frontend
+# Lalu jalankan perintah instalasi NPM:
+npm install
+
+# (Atau jika menggunakan pnpm / yarn)
+# pnpm install
+# yarn install
+
+# =========================================================================
+# SELANJUTNYA:
+# Setelah semua dependensi terinstal, jalankan server:
+# Terminal 1 (Di root proyek): php artisan serve
+# Terminal 2 (Di folder frontend): npm run dev
+# =========================================================================

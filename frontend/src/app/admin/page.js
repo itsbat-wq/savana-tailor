@@ -1,0 +1,22 @@
+'use client';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import useAuthStore from '@/stores/authStore';
+
+export default function AdminIndexPage() {
+  const { isAuthenticated } = useAuthStore();
+  const router = useRouter();
+  useEffect(() => {
+    if (isAuthenticated) router.replace('/admin/dashboard');
+    else router.replace('/admin/login');
+  }, [isAuthenticated, router]);
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ width: 40, height: 40, border: '3px solid #C9A84C', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 12px' }} />
+        <p style={{ color: '#9e9e9e', fontSize: '0.8rem' }}>Mengalihkan...</p>
+        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      </div>
+    </div>
+  );
+}
