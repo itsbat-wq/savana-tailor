@@ -36,7 +36,7 @@ export default function ProductCard({ product, index = 0 }) {
           <Image src={img} alt={product.name} fill sizes="(max-width:768px) 100vw, 400px" className={styles.image} />
         ) : (
           <div className={styles.placeholder}>
-            <span>Savana Taylor</span>
+            <span>Savana Tailor</span>
           </div>
         )}
         <div className={styles.overlay}>

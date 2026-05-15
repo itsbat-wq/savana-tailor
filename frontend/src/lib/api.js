@@ -118,7 +118,7 @@ export const adminUpdateSettings = (settings) => api.put('/admin/settings', { se
 // Media upload
 export const adminUploadImage = async (file, folder = 'products') => {
   const form = new FormData();
-  form.append('file', file);
+  form.append('image', file);
   form.append('folder', folder);
   const res = await api.post('/admin/media/upload', form, {
     headers: { 'Content-Type': 'multipart/form-data' },

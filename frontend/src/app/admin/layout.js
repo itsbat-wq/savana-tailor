@@ -3,7 +3,7 @@ import Providers from '../providers';
 import { Toaster } from 'sonner';
 
 export const metadata = {
-  title: 'Admin Panel - Savana Taylor Boutique',
+  title: 'Admin Panel - Savana Tailor Boutique',
 };
 
 /* Admin section has its own layout — no public Navbar/Footer */

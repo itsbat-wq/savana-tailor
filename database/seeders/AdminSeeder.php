@@ -10,7 +10,7 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(
-            ['email' => 'admin@savanataylor.com'],
+            ['email' => 'admin@savanatailor.com'],
             [
                 'name' => 'Admin Savana',
                 'password' => bcrypt('savana2026'),

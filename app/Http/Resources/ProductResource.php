@@ -23,6 +23,7 @@ class ProductResource extends JsonResource
             'status' => $this->status,
             'is_featured' => $this->is_featured,
             'sort_order' => $this->sort_order,
+            'type' => $this->type,
             'category' => new CategoryResource($this->whenLoaded('category')),
             'category_id' => $this->category_id,
             'created_at' => $this->created_at,

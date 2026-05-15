@@ -1,5 +1,6 @@
 'use client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import Link from 'next/link';
 import { Trash2, Plus } from 'lucide-react';
 import { toast } from 'sonner';
 import AdminShell from '@/components/admin/AdminShell';
@@ -24,7 +25,7 @@ export default function AdminRentalsPage() {
             <h1 className={styles.title}>Rental</h1>
             <p className={styles.sub}>{rentals.length} item rental</p>
           </div>
-          <a href="/admin/rentals/create" className={styles.addBtn}><Plus size={16} /> Tambah Rental</a>
+          <Link href="/admin/rentals/create" className={styles.addBtn}><Plus size={16} /> Tambah Rental</Link>
         </div>
         <div className={styles.tableWrap}>
           {isLoading ? <div className={styles.tableLoad}>Memuat...</div> : (

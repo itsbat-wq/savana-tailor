@@ -52,3 +52,38 @@
   color: var(--gray-mid);
   font-size: 0.9rem;
 }
+
+/* Subcategory filter bar */
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 24px 0 0;
+}
+.filterBtn {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--charcoal);
+}
+.filterBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.filterBtnActive {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+.filterBtnActive:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}

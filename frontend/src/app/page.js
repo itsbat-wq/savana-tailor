@@ -20,7 +20,7 @@ function Hero({ settings }) {
     <section ref={ref} className={styles.hero}>
       {/* Parallax image */}
       <motion.div className={styles.heroBg} style={{ y }}>
-        <Image src="/Foto Produk/IMG_7054.PNG" alt="Savana Taylor" fill priority sizes="100vw"
+        <Image src="/Foto Produk/IMG_7054.PNG" alt="Savana Tailor" fill priority sizes="100vw"
           className={styles.heroBgImg}
           onError={e => { e.target.style.display = 'none'; }}
         />

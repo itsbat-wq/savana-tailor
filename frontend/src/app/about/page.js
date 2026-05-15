@@ -56,7 +56,7 @@ export default function AboutPage() {
               </h1>
               <div className={styles.heroDivider} />
               <p className={`body-lg ${styles.heroDesc}`}>
-                Savana Taylor Boutique adalah premium tailor boutique yang bergerak di bidang
+                Savana Tailor Boutique adalah premium tailor boutique yang bergerak di bidang
                 custom formal wear dan professional uniform untuk pria dan wanita.
               </p>
               <div className={styles.heroActions}>
@@ -76,10 +76,10 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}>
               <div className={styles.imgMain}>
-                <Image src="/Foto Produk/Man paling atas PDUK PIMPINAN.PNG" alt="Savana Taylor" fill sizes="600px" className={styles.imgPhoto} />
+                <Image src="/Foto Produk/Man paling atas PDUK PIMPINAN.PNG" alt="Savana Tailor" fill sizes="600px" className={styles.imgPhoto} />
               </div>
               <div className={styles.imgSecond}>
-                <Image src="/Foto Produk/PDUK Jaksa Perempuan.PNG" alt="Savana Taylor" fill sizes="300px" className={styles.imgPhoto} />
+                <Image src="/Foto Produk/PDUK Jaksa Perempuan.PNG" alt="Savana Tailor" fill sizes="300px" className={styles.imgPhoto} />
               </div>
               <div className={styles.imgLabel}>
                 <span className={`label ${styles.imgLabelText}`}>Premium Tailoring</span>
@@ -122,10 +122,10 @@ export default function AboutPage() {
                 {activeTab === 0 && (
                   <motion.div key="id" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.4 }}>
                     <span className={`label ${styles.contentLabel}`}>Tentang Kami</span>
-                    <h2 className={`heading-lg ${styles.contentTitle}`}>Siapa Savana Taylor?</h2>
+                    <h2 className={`heading-lg ${styles.contentTitle}`}>Siapa Savana Tailor?</h2>
                     <div className="gold-line" style={{ margin: '24px 0' }} />
                     <p className={styles.contentBody}>
-                      Savana Taylor Boutique adalah <strong>premium tailor boutique</strong> yang bergerak di bidang
+                      Savana Tailor Boutique adalah <strong>premium tailor boutique</strong> yang bergerak di bidang
                       custom formal wear dan professional uniform untuk pria dan wanita. Selama kurang lebih
                       <strong> 10 tahun</strong>, kami telah melayani berbagai kebutuhan pakaian formal dengan
                       konsep eksklusif, elegan, dan profesional.
@@ -267,7 +267,7 @@ export default function AboutPage() {
               Pertemuan harus dengan janji terlebih dahulu.
             </p>
             <div className={styles.ctaActions}>
-              <a href="https://wa.me/6281317935360?text=Halo+Savana+Taylor,+saya+ingin+book+appointment." target="_blank" rel="noopener noreferrer" className="btn btn-dark">
+              <a href="https://wa.me/6281317935360?text=Halo+Savana+Tailor,+saya+ingin+book+appointment." target="_blank" rel="noopener noreferrer" className="btn btn-dark">
                 Book Appointment
               </a>
               <Link href="/contact" className="btn btn-outline">

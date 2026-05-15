@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import Link from 'next/link';
 import { Pencil, Trash2, Plus, Search } from 'lucide-react';
 import { toast } from 'sonner';
 import AdminShell from '@/components/admin/AdminShell';
-import { adminGetProducts, adminDeleteProduct } from '@/lib/api';
+import { adminGetProducts, adminDeleteProduct, STORAGE } from '@/lib/api';
 import styles from './products.module.css';
 
 export default function AdminProductsPage() {
@@ -40,9 +41,9 @@ export default function AdminProductsPage() {
             <h1 className={styles.title}>Produk</h1>
             <p className={styles.sub}>{products.length} produk ditemukan</p>
           </div>
-          <a href="/admin/products/create" className={styles.addBtn}>
+          <Link href="/admin/products/create" className={styles.addBtn}>
             <Plus size={16} /> Tambah Produk
-          </a>
+          </Link>
         </div>
 
         {/* Search */}
@@ -64,6 +65,7 @@ export default function AdminProductsPage() {
                 <tr>
                   <th>Produk</th>
                   <th>Kategori</th>
+                  <th>Tipe</th>
                   <th>Harga</th>
                   <th>Status</th>
                   <th>Featured</th>
@@ -72,7 +74,7 @@ export default function AdminProductsPage() {
               </thead>
               <tbody>
                 {products.length === 0 ? (
-                  <tr><td colSpan={6} className={styles.emptyRow}>Belum ada produk</td></tr>
+                  <tr><td colSpan={7} className={styles.emptyRow}>Belum ada produk</td></tr>
                 ) : products.map(p => (
                   <tr key={p.id} className={styles.row}>
                     <td>
@@ -80,7 +82,7 @@ export default function AdminProductsPage() {
                         {p.images?.[0] && (
                           <div className={styles.thumb}>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={p.images[0].startsWith('/Foto') ? p.images[0] : `http://127.0.0.1:8000${p.images[0]}`} alt="" />
+                            <img src={p.images[0].startsWith('http') ? p.images[0] : `${STORAGE}${p.images[0]}`} alt="" />
                           </div>
                         )}
                         <div>
@@ -90,6 +92,7 @@ export default function AdminProductsPage() {
                       </div>
                     </td>
                     <td><span className={styles.badge}>{p.category?.name}</span></td>
+                    <td>{p.type || '—'}</td>
                     <td className={styles.price}>{p.price_display}</td>
                     <td>
                       <span className={`${styles.statusPill} ${p.status === 'active' ? styles.active : styles.inactive}`}>
@@ -99,9 +102,9 @@ export default function AdminProductsPage() {
                     <td>{p.is_featured ? '⭐' : '—'}</td>
                     <td>
                       <div className={styles.actions}>
-                        <a href={`/admin/products/${p.id}/edit`} className={styles.editBtn} title="Edit">
+                        <Link href={`/admin/products/${p.id}/edit`} className={styles.editBtn} title="Edit">
                           <Pencil size={14} />
-                        </a>
+                        </Link>
                         <button onClick={() => handleDelete(p)} className={styles.deleteBtn} title="Hapus"
                           disabled={deleteMutation.isPending}>
                           <Trash2 size={14} />

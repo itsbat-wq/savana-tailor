@@ -32,7 +32,7 @@ class SettingSeeder extends Seeder
             ['key' => 'stat_custom_label', 'value' => 'Custom Made', 'group' => 'stats'],
 
             // About
-            ['key' => 'about_text', 'value' => 'Savana Taylor Boutique adalah premium tailor boutique yang bergerak di bidang custom formal wear dan professional uniform untuk pria dan wanita. Selama kurang lebih 10 tahun, kami telah melayani berbagai kebutuhan pakaian formal dengan konsep eksklusif, elegan, dan profesional.', 'group' => 'about'],
+            ['key' => 'about_text', 'value' => 'Savana Tailor Boutique adalah premium tailor boutique yang bergerak di bidang custom formal wear dan professional uniform untuk pria dan wanita. Selama kurang lebih 10 tahun, kami telah melayani berbagai kebutuhan pakaian formal dengan konsep eksklusif, elegan, dan profesional.', 'group' => 'about'],
         ];
 
         foreach ($settings as $setting) {

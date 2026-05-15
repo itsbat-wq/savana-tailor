@@ -43,12 +43,12 @@ export default function AdminLoginPage() {
         <div className={styles.logoWrap}>
           <Image
             src="/Logo/ChatGPT Image May 13, 2026, 05_21_18 PM.png"
-            alt="Savana Taylor"
+            alt="Savana Tailor"
             width={64} height={64}
             className={styles.logoImg}
           />
           <h1 className={styles.title}>Admin Panel</h1>
-          <p className={styles.sub}>Savana Taylor Boutique</p>
+          <p className={styles.sub}>Savana Tailor Boutique</p>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -58,7 +58,7 @@ export default function AdminLoginPage() {
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              placeholder="admin@savanataylor.com"
+              placeholder="admin@savanatailor.com"
               autoComplete="email"
               className={styles.input}
               disabled={loading}

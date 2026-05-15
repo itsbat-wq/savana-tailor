@@ -9,8 +9,8 @@ export default function Footer() {
       <div className={`container ${styles.inner}`}>
         <div className={styles.brand}>
           <div className={styles.logoWrap}>
-            <Image src="/Logo/ChatGPT Image May 13, 2026, 05_21_18 PM.png" alt="Savana Taylor" width={48} height={48} className={styles.logoImg} />
-            <span className={styles.logoText}>SAVANA <span className={styles.dot}>·</span> TAYLOR</span>
+            <Image src="/Logo/ChatGPT Image May 13, 2026, 05_21_18 PM.png" alt="Savana Tailor" width={48} height={48} className={styles.logoImg} />
+            <span className={styles.logoText}>SAVANA <span className={styles.dot}>·</span> TAILOR</span>
           </div>
           <p className={styles.tagline}>Custom Made &bull; Exclusive &bull; Elegant &bull; Timeless</p>
           <div className={styles.socials}>
@@ -52,7 +52,7 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <div className="container">
-          <p className={styles.copyright}>&copy; {year} Savana Taylor Boutique. All rights reserved.</p>
+          <p className={styles.copyright}>&copy; {year} Savana Tailor Boutique. All rights reserved.</p>
         </div>
       </div>
     </footer>

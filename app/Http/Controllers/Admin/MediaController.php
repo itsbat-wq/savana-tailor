@@ -26,7 +26,7 @@ class MediaController extends Controller
         return response()->json([
             'path' => "/storage/{$path}",
             'filename' => $filename,
-            'url' => asset("storage/{$path}"),
+            'url' => "/storage/{$path}",
             'message' => 'Gambar berhasil diupload',
         ]);
     }

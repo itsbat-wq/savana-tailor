@@ -1,5 +1,6 @@
 'use client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import Link from 'next/link';
 import { Trash2, Plus } from 'lucide-react';
 import { toast } from 'sonner';
 import AdminShell from '@/components/admin/AdminShell';
@@ -24,7 +25,7 @@ export default function AdminCategoriesPage() {
             <h1 className={styles.title}>Kategori</h1>
             <p className={styles.sub}>{categories.length} kategori</p>
           </div>
-          <a href="/admin/categories/create" className={styles.addBtn}><Plus size={16} /> Tambah Kategori</a>
+          <Link href="/admin/categories/create" className={styles.addBtn}><Plus size={16} /> Tambah Kategori</Link>
         </div>
         <div className={styles.tableWrap}>
           {isLoading ? <div className={styles.tableLoad}>Memuat...</div> : (

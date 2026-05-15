@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
 import { getProducts } from '@/lib/api';
@@ -8,13 +8,28 @@ import styles from './catalog.module.css';
 
 export default function CatalogClient({ categorySlug, title, subtitle }) {
   const [sort, setSort] = useState('default');
+  const [activeType, setActiveType] = useState('all');
 
   const { data, isLoading } = useQuery({
     queryKey: ['products', categorySlug],
     queryFn: () => getProducts({ category: categorySlug, per_page: 50 }),
   });
 
-  let products = data?.data ?? [];
+  const allProducts = data?.data ?? [];
+
+  // Extract unique types/subcategories from products
+  const types = useMemo(() => {
+    const typeSet = new Set();
+    allProducts.forEach(p => {
+      if (p.type && p.type.trim()) typeSet.add(p.type.trim());
+    });
+    return Array.from(typeSet).sort();
+  }, [allProducts]);
+
+  // Filter by type
+  let products = activeType === 'all' ? allProducts : allProducts.filter(p => p.type && p.type.trim() === activeType);
+
+  // Sort
   if (sort === 'low') products = [...products].sort((a, b) => a.price - b.price);
   if (sort === 'high') products = [...products].sort((a, b) => b.price - a.price);
 
@@ -31,6 +46,21 @@ export default function CatalogClient({ categorySlug, title, subtitle }) {
       </div>
 
       <div className="container">
+        {/* Subcategory Filter */}
+        {types.length > 0 && (
+          <div className={styles.filterBar}>
+            <div className={styles.sortWrap}>
+              <span className={`label ${styles.sortLabel}`}>Sub-kategori:</span>
+              <select value={activeType} onChange={e => setActiveType(e.target.value)} className={styles.sortSelect}>
+                <option value="all">Semua</option>
+                {types.map(type => (
+                  <option key={type} value={type}>{type}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        )}
+
         {/* Toolbar */}
         <div className={styles.toolbar}>
           <p className={styles.count}>{isLoading ? '—' : `${products.length} produk`}</p>

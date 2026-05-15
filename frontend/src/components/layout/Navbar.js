@@ -37,11 +37,11 @@ export default function Navbar() {
         <div className={`container ${styles.inner}`}>
           {/* Logo */}
           <Link href="/" className={styles.logo}>
-            <Image src="/Logo/ChatGPT Image May 13, 2026, 05_21_18 PM.png" alt="Savana Taylor" width={40} height={40} className={styles.logoImg} />
+            <Image src="/Logo/ChatGPT Image May 13, 2026, 05_21_18 PM.png" alt="Savana Tailor" width={40} height={40} className={styles.logoImg} />
             <div className={styles.logoTextWrap}>
               <span className={styles.logoText}>SAVANA</span>
               <span className={styles.logoDot} />
-              <span className={styles.logoSub}>TAYLOR</span>
+              <span className={styles.logoSub}>TAILOR</span>
             </div>
           </Link>
 
@@ -106,8 +106,8 @@ export default function Navbar() {
             >
               <button className={styles.mobileClose} onClick={() => setMobileOpen(false)}><X size={22} /></button>
               <div className={styles.mobileLogoWrap}>
-                <Image src="/Logo/ChatGPT Image May 13, 2026, 05_21_18 PM.png" alt="Savana Taylor" width={48} height={48} style={{ marginBottom: 12, borderRadius: '50%' }} />
-                <span className={styles.mobileLogoText}>SAVANA TAYLOR</span>
+                <Image src="/Logo/ChatGPT Image May 13, 2026, 05_21_18 PM.png" alt="Savana Tailor" width={48} height={48} style={{ marginBottom: 12, borderRadius: '50%' }} />
+                <span className={styles.mobileLogoText}>SAVANA TAILOR</span>
               </div>
               <nav className={styles.mobileNav}>
                 {[{ href: '/', label: 'Home' }, ...SHOP_ITEMS, { href: '/rental', label: 'Rental' }, { href: '/about', label: 'About' }, { href: '/contact', label: 'Contact' }].map((item, i) => (

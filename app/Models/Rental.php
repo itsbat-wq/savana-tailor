@@ -34,7 +34,7 @@ class Rental extends Model
     {
         $phone = SiteSetting::getValue('whatsapp', '6281317935360');
         $text = $this->whatsapp_text
-            ?? "Halo Savana Taylor, saya ingin bertanya tentang rental: {$this->name} - {$this->price_display}.";
+            ?? "Halo Savana Tailor, saya ingin bertanya tentang rental: {$this->name} - {$this->price_display}.";
 
         return "https://wa.me/{$phone}?text=" . urlencode($text);
     }

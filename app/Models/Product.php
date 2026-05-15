@@ -23,6 +23,7 @@ class Product extends Model
         'status',
         'is_featured',
         'sort_order',
+        'type',
     ];
 
     protected function casts(): array
@@ -48,7 +49,7 @@ class Product extends Model
     {
         $phone = SiteSetting::getValue('whatsapp', '6281317935360');
         $text = $this->whatsapp_text
-            ?? "Halo Savana Taylor, saya tertarik dengan produk: {$this->name} ({$this->category->name}) - {$this->price_display}. Mohon info lebih lanjut.";
+            ?? "Halo Savana Tailor, saya tertarik dengan produk: {$this->name} ({$this->category->name}) - {$this->price_display}. Mohon info lebih lanjut.";
 
         return "https://wa.me/{$phone}?text=" . urlencode($text);
     }

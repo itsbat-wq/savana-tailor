@@ -58,9 +58,9 @@ export default function AdminShell({ children }) {
       {/* Sidebar */}
       <aside className={`${styles.sidebar} ${sidebarOpen ? styles.sidebarOpen : ''}`}>
         <div className={styles.sidebarHeader}>
-          <Image src="/Logo/ChatGPT Image May 13, 2026, 05_21_18 PM.png" alt="Logo" width={36} height={36} style={{ borderRadius: '50%' }} />
+          <Image src="/Logo/ChatGPT Image May 13, 2026, 05_21_18 PM.png" alt="Logo" width={48} height={48} style={{ borderRadius: '50%' }} />
           <div>
-            <span className={styles.brandName}>SAVANA TAYLOR</span>
+            <span className={styles.brandName}>SAVANA TAILOR</span>
             <span className={styles.brandSub}>Admin Panel</span>
           </div>
         </div>

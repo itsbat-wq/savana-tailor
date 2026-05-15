@@ -64,28 +64,28 @@ const STATIC_RENTALS = [
     description: 'Setelan jas lengkap pria untuk acara pernikahan, wisuda, dan formal event.',
     price_display: 'Rp 250.000 / hari', status: 'available',
     images: ['/Foto Produk/IMG_7054.PNG'],
-    whatsapp_url: 'https://wa.me/6281317935360?text=Halo+Savana+Taylor,+saya+ingin+sewa+Setelan+Jas+Pria+Formal.+Mohon+info+ketersediaan+dan+harga.',
+    whatsapp_url: 'https://wa.me/6281317935360?text=Halo+Savana+Tailor,+saya+ingin+sewa+Setelan+Jas+Pria+Formal.+Mohon+info+ketersediaan+dan+harga.',
   },
   {
     id: 2, name: 'Jas Wanita Formal',
     description: 'Jas wanita elegan untuk acara formal, wisuda, seminar, dan pernikahan.',
     price_display: 'Rp 200.000 / hari', status: 'available',
     images: ['/Foto Produk/IMG_7134.PNG'],
-    whatsapp_url: 'https://wa.me/6281317935360?text=Halo+Savana+Taylor,+saya+ingin+sewa+Jas+Wanita+Formal.+Mohon+info+ketersediaan+dan+harga.',
+    whatsapp_url: 'https://wa.me/6281317935360?text=Halo+Savana+Tailor,+saya+ingin+sewa+Jas+Wanita+Formal.+Mohon+info+ketersediaan+dan+harga.',
   },
   {
     id: 3, name: 'Kebaya Modern Wanita',
     description: 'Kebaya modern premium untuk acara adat, pernikahan, dan perayaan nasional.',
     price_display: 'Rp 200.000 / hari', status: 'available',
     images: ['/Foto Produk/IMG_7137.PNG'],
-    whatsapp_url: 'https://wa.me/6281317935360?text=Halo+Savana+Taylor,+saya+ingin+sewa+Kebaya+Modern.+Mohon+info+ketersediaan+dan+harga.',
+    whatsapp_url: 'https://wa.me/6281317935360?text=Halo+Savana+Tailor,+saya+ingin+sewa+Kebaya+Modern.+Mohon+info+ketersediaan+dan+harga.',
   },
   {
     id: 4, name: 'One Set Formal Premium',
     description: 'Paket lengkap: jas, kemeja, celana/rok untuk tampil sempurna di segala acara formal.',
     price_display: 'Rp 350.000 / hari', status: 'available',
     images: ['/Foto Produk/IMG_7058.PNG'],
-    whatsapp_url: 'https://wa.me/6281317935360?text=Halo+Savana+Taylor,+saya+ingin+sewa+One+Set+Formal+Premium.+Mohon+info+ketersediaan+dan+harga.',
+    whatsapp_url: 'https://wa.me/6281317935360?text=Halo+Savana+Tailor,+saya+ingin+sewa+One+Set+Formal+Premium.+Mohon+info+ketersediaan+dan+harga.',
   },
 ];
 
@@ -109,7 +109,7 @@ export default function RentalPage() {
             </h1>
             <div className={styles.heroDivider} />
             <p className={`body-lg ${styles.heroDesc}`}>
-              Sewa pakaian formal premium Savana Taylor untuk acara spesial Anda.<br />
+              Sewa pakaian formal premium Savana Tailor untuk acara spesial Anda.<br />
               Pilih, fitting, dan tampil percaya diri.
             </p>
           </motion.div>
@@ -129,7 +129,7 @@ export default function RentalPage() {
             {[
               { n: '01', title: 'Hubungi Kami', desc: 'Chat via WhatsApp untuk cek ketersediaan dan pilih item yang sesuai.' },
               { n: '02', title: 'Book & Fitting', desc: 'Datang ke boutique (by appointment) untuk fitting dan penyesuaian ukuran.' },
-              { n: '03', title: 'Tampil Percaya Diri', desc: 'Kenakan pakaian premium Savana Taylor dan tampil memukau di acara Anda.' },
+              { n: '03', title: 'Tampil Percaya Diri', desc: 'Kenakan pakaian premium Savana Tailor dan tampil memukau di acara Anda.' },
               { n: '04', title: 'Pengembalian', desc: 'Kembalikan pakaian sesuai tanggal yang disepakati dalam kondisi baik.' },
             ].map((s, i) => (
               <motion.div key={i} className={styles.step}
@@ -192,7 +192,7 @@ export default function RentalPage() {
             </div>
             <div className={styles.noteCta}>
               <p className={styles.noteCtaText}>Ada pertanyaan? Hubungi kami langsung.</p>
-              <a href="https://wa.me/6281317935360?text=Halo+Savana+Taylor,+saya+ingin+tanya+tentang+rental+pakaian." target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+              <a href="https://wa.me/6281317935360?text=Halo+Savana+Tailor,+saya+ingin+tanya+tentang+rental+pakaian." target="_blank" rel="noopener noreferrer" className="btn btn-gold">
                 Chat WhatsApp
               </a>
             </div>

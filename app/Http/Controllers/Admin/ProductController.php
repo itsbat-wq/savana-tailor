@@ -45,9 +45,15 @@ class ProductController extends Controller
             'status' => 'in:active,inactive',
             'is_featured' => 'boolean',
             'sort_order' => 'integer',
+            'type' => 'nullable|string|max:100',
         ]);
 
         $validated['slug'] = Str::slug($validated['name']) . '-' . Str::random(5);
+
+        // Auto-generate price_display if not provided
+        if (empty($validated['price_display']) && isset($validated['price'])) {
+            $validated['price_display'] = 'Rp ' . number_format($validated['price'], 0, ',', '.');
+        }
 
         if (empty($validated['sort_order'])) {
             $validated['sort_order'] = Product::max('sort_order') + 1;
@@ -81,10 +87,16 @@ class ProductController extends Controller
             'status' => 'in:active,inactive',
             'is_featured' => 'boolean',
             'sort_order' => 'integer',
+            'type' => 'nullable|string|max:100',
         ]);
 
         if (isset($validated['name']) && $validated['name'] !== $product->name) {
             $validated['slug'] = Str::slug($validated['name']) . '-' . Str::random(5);
+        }
+
+        // Auto-generate price_display if price changed but price_display not provided
+        if (isset($validated['price']) && empty($validated['price_display'])) {
+            $validated['price_display'] = 'Rp ' . number_format($validated['price'], 0, ',', '.');
         }
 
         $product->update($validated);

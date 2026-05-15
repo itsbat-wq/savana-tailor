@@ -66,7 +66,7 @@ export default function ProductDetailPage() {
               <Image src={resolveImg(images[activeImg])} alt={product.name} fill sizes="600px" className={styles.mainPhoto} />
             ) : (
               <div className={styles.imgPlaceholder}>
-                <span>Savana Taylor</span>
+                <span>Savana Tailor</span>
               </div>
             )}
           </motion.div>

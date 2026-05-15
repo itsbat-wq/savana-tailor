@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Savana Taylor Boutique — Custom Made • Exclusive • Elegant • Timeless</title>
-    <meta name="description" content="Savana Taylor Boutique - Premium custom tailor untuk baju dinas, formal wear, dan rental. 10+ tahun pengalaman melayani profesional Indonesia.">
+    <title>Savana Tailor Boutique — Custom Made • Exclusive • Elegant • Timeless</title>
+    <meta name="description" content="Savana Tailor Boutique - Premium custom tailor untuk baju dinas, formal wear, dan rental. 10+ tahun pengalaman melayani profesional Indonesia.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
